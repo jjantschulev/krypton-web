@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Krypton</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>krypton</h1>
+      </div>
+      <div class="input">
+        <textarea id="in"></textarea>
+      </div>
+      <div class="buttons">
+        <div class="key_input">
+          <input id="key" type="password" value="1">
+        </div>
+        <div class="button_container">
+          <button onclick="decrypt()" type="button" class="redButton">DECRYPT</button>
+          <button onclick="encrypt()" type="button" class="greenButton">ENCRYPT</button>
+        </div>
+        <div class="icon_container">
+          <i onclick="copy()" class="material-icons">content_copy</i>
+          <i onclick="clearField()" class="material-icons">clear</i>
+          <i onclick="updateKey()" class="material-icons">vpn_key</i>
+          <i onclick="lock()" class="material-icons">lock</i>
+
+        </div>
+      </div>
+      <div class="output">
+        <textarea readonly id="out"></textarea>
+      </div>
+    </div>
+    <div id="lockCover">
+      <p>locked</p>
+      <i onclick="unlock()" class="large material-icons">lock</i>
+    </div>
+    <script src="cookie.js" charset="utf-8"></script>
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>
