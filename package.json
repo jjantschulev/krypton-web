@@ -1,0 +1,26 @@
+{
+  "name": "krypton",
+  "version": "1.0.0",
+  "description": "text encoder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kraken22/krypton-web.git"
+  },
+  "keywords": [
+    "secret",
+    "encryption"
+  ],
+  "author": "Jordan Jantschulev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kraken22/krypton-web/issues"
+  },
+  "homepage": "https://github.com/kraken22/krypton-web#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
