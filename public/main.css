@@ -47,8 +47,29 @@ h1  {
 
   color: rgb(255,180,0);
   text-align: center;
-  display: block;
-  font-size: 136px;
+  display: none;
+  font-size: 36px;
+
+}
+
+.passwordInputContainer {
+  margin: 70px auto 0 auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+#unlockPassword {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  width: 100%;
+}
+
+#unlockButton {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  width: calc(100% - 20px);
+  margin-left: 20px;
 
 }
 
@@ -56,7 +77,7 @@ h1  {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
   font-size: 1.8em;
-  color: rgb(245,245,245);
+  color: rgb(255,180,0);
   width: 100%;
   height: calc(16% - 15px);
   font-weight: 600;
@@ -70,7 +91,6 @@ h1  {
   background-color: inherit;
   height: 35%;
   position: relative;
-
   margin: 0;
 }
 
@@ -101,8 +121,8 @@ h1  {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 
-}
 
+}
 
 
 
@@ -149,7 +169,7 @@ i {
   margin: 0 10px;
 }
 
-button {
+.button {
   background-color: inherit;
   border: 3px solid;
   color: white;
@@ -177,6 +197,13 @@ button {
   animation-duration: 0.7s;
 }
 
+.orangeButton {
+  border-color: rgb(255, 180, 0);
+  color: rgb(255, 180, 0);
+  animation-name: orangeButtonOut;
+  animation-duration: 0.7s;
+}
+
 .redButton:hover {
   background-color: red;
   color: black;
@@ -188,6 +215,13 @@ button {
   background-color: rgb(0, 255, 80);
   color: black;
   animation-name: greenButtonIn;
+  animation-duration: 0.7s;
+}
+
+.orangeButton:hover {
+  background-color: rgb(255, 180, 0);
+  color: black;
+  animation-name: orangeButtonIn;
   animation-duration: 0.7s;
 }
 
@@ -240,6 +274,26 @@ button {
     color: black;
   }
 }
+@keyframes  orangeButtonIn{
+  0% {
+    border-color: rgb(255, 180, 0);
+    color: rgb(255, 180, 0);
+  }
+  100% {
+    background-color: rgb(255, 180, 0);
+    color: black;
+  }
+}
+@keyframes  orangeButtonOut{
+  100% {
+    border-color: rgb(255, 180, 0);
+    color: rgb(255, 180, 0);
+  }
+  0% {
+    background-color: rgb(255, 180, 0);
+    color: black;
+  }
+}
 
 .key_input {
   grid-column-start: 1;
@@ -257,25 +311,26 @@ button {
 
 }
 
-#key {
+.passwordInput {
   background-color: inherit;
-  width: calc(100% - 48px);
-
   border: none;
   border-radius: 0;
   border-bottom-color: rgb(255, 180, 0);
   border-bottom-style: solid;
   border-bottom-width: 4px;
+  outline: none;
+  color: rgb(255, 180, 0);
+  font-size: 1.5em;
+}
+
+#key {
+  background-color: inherit;
+  width: calc(100% - 48px);
 
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(calc(-50% - 24px), -50%);
-
-  outline: none;
-
-  color: rgb(255, 180, 0);
-  font-size: 1.5em;
 }
 
 i:hover {

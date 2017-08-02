@@ -18,11 +18,11 @@
       </div>
       <div class="buttons">
         <div class="key_input">
-          <input id="key" type="password" value="1">
+          <input id="key" class="passwordInput" type="password" value="1">
         </div>
         <div class="button_container">
-          <button onclick="decrypt()" type="button" class="redButton">DECRYPT</button>
-          <button onclick="encrypt()" type="button" class="greenButton">ENCRYPT</button>
+          <button onclick="decrypt()" type="button" class="button redButton">DECRYPT</button>
+          <button onclick="encrypt()" type="button" class="button greenButton">ENCRYPT</button>
         </div>
         <div class="icon_container">
           <i onclick="copy()" class="material-icons">content_copy</i>
@@ -37,8 +37,14 @@
       </div>
     </div>
     <div id="lockCover">
-      <p>locked</p>
-      <i onclick="unlock()" class="large material-icons">lock</i>
+      <svg style="margin-top:60px" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 48 48">
+          <path d="M0 0h48v48H0z" fill="none"/>
+          <path d="M36 16h-2v-4c0-5.52-4.48-10-10-10S14 6.48 14 12v4h-2c-2.21 0-4 1.79-4 4v20c0 2.21 1.79 4 4 4h24c2.21 0 4-1.79 4-4V20c0-2.21-1.79-4-4-4zM24 34c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm6.2-18H17.8v-4c0-3.42 2.78-6.2 6.2-6.2 3.42 0 6.2 2.78 6.2 6.2v4z" fill="rgb(255, 180, 0)"/>
+      </svg>
+      <div class="passwordInputContainer">
+        <input id="unlockPassword" class="passwordInput" type="password">
+        <button class="button orangeButton" id="unlockButton" onclick="unlock()">UNLOCK</button>
+      </div>
     </div>
     <script src="cookie.js" charset="utf-8"></script>
     <script src="main.js" charset="utf-8"></script>

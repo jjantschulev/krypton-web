@@ -85,6 +85,14 @@ function lock() {
   document.getElementById('lockCover').style.display = "block";
 }
 
+document.getElementById('in').onfocus = function () {
+  this.parentNode.style.borderStyle = 'solid';
+}
+
 function unlock() {
-  document.getElementById('lockCover').style.display = "none";
+  var unlockPassword = document.getElementById('unlockPassword');
+  if(unlockPassword.value == key){
+    document.getElementById('lockCover').style.display = "none";
+  }
+  unlockPassword.value = ""
 }
