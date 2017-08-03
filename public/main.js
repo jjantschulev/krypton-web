@@ -13,7 +13,7 @@ function encrypt() {
   var solution = "";
   for (var i = 0; i < string.length; i++) {
     ints.push(string.charCodeAt(i));
-    for (var j = 0; j < string.length; j++) {
+    for (var j = 0; j < 6; j++) {
       ints[i]+=r.randomInt(6)-3;
     }
     solution += String.fromCharCode(ints[i]);
@@ -28,7 +28,7 @@ function decrypt() {
   var solution = "";
   for (var i = 0; i < string.length; i++) {
     ints.push(string.charCodeAt(i));
-    for (var j = 0; j < string.length; j++) {
+    for (var j = 0; j < 6; j++) {
       ints[i]-=r.randomInt(6)-3;
     }
     solution += String.fromCharCode(ints[i]);
