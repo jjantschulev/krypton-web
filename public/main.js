@@ -1,18 +1,20 @@
 var key = Cookies.get("krypton_key");
 if(key == undefined){
   key = 1;
+}else{
+  document.getElementById('lockCover').style.display = "block";
 }
 document.getElementById('key').value = key;
 
 function encrypt() {
   var r = new Random(key);
-  string = document.getElementById('in').value;
+  var string = document.getElementById('in').value;
   var ints = []
   var solution = "";
   for (var i = 0; i < string.length; i++) {
     ints.push(string.charCodeAt(i));
-    for (var j = 0; j < 6; j++) {
-      ints[i]+=r.randomInt(6);
+    for (var j = 0; j < string.length; j++) {
+      ints[i]+=r.randomInt(6)-3;
     }
     solution += String.fromCharCode(ints[i]);
   }
@@ -21,20 +23,18 @@ function encrypt() {
 
 function decrypt() {
   var r = new Random(key);
-  string = document.getElementById('in').value;
+  var string = document.getElementById('in').value;
   var ints = []
   var solution = "";
   for (var i = 0; i < string.length; i++) {
     ints.push(string.charCodeAt(i));
-    for (var j = 0; j < 6; j++) {
-      ints[i]-=r.randomInt(6);
+    for (var j = 0; j < string.length; j++) {
+      ints[i]-=r.randomInt(6)-3;
     }
     solution += String.fromCharCode(ints[i]);
   }
   document.getElementById('out').value = solution;
 }
-
-
 
 function Random(k) {
   this.seed = k;
@@ -93,6 +93,16 @@ function unlock() {
   var unlockPassword = document.getElementById('unlockPassword');
   if(unlockPassword.value == key){
     document.getElementById('lockCover').style.display = "none";
+  }else{
+    lockSVG.style.animationName = 'passwordIncorrect';
+    setTimeout(function () {
+      lockSVG.style.animationName = '';
+    }, 600)
   }
   unlockPassword.value = ""
 }
+
+var lockSVG = document.getElementById('lockSVG');
+lockSVG.addEventListener('animationEnd', function(){
+    this.style.animationName = '';
+}, false);
